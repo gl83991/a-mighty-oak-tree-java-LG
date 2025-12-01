@@ -7,8 +7,16 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
-    @Test void appHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+    @Test
+    public void testSquirrelName() {
+        Squirrel squirrel = new Squirrel("Testy");
+        assertEquals("Test", squirrel.getName());
+    }
+
+    @Test
+    public void testNodeData() {
+        Squirrel squirrel = new Squirrel("Node");
+        Node node = new Node(squirrel);
+        assertEquals("Node", node.getData().getName());
     }
 }
