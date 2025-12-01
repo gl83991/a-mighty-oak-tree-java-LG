@@ -3,11 +3,20 @@ package org.example;
 public class BinaryTree {
     private Node root;
 
+    public void setRoot(Node node) {
+        this.root = node;
+    }
+
     public BinaryTree() {
         this.root = null;
     }
 
-    public void tranverse() {
+    public void traverse() {
+        if (this.root ==null) {
+            System.out.println("The tree is empty.");
+            return;
+        }
+
         System.out.println("Root: " + this.root.getData().getName());
 
         if (root.left() != null) {
